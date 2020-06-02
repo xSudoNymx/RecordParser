@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -17,9 +19,16 @@ public class ParseApplication {
         readFileByLine(path);
     }
 
-    printList(recordRepository.getRecordsSortedByGenderAndLastName(true));
-    printList(recordRepository.getRecordsSortedByBirthday(true));
-    printList(recordRepository.getRecordsSortedByLastName(false));
+    List<Record> records = new ArrayList<>(recordRepository.getRecords());
+
+    records.sort(Comparator.comparing(Record::getGender).thenComparing(Record::getLastName));
+    printList(records);
+
+    records.sort(Comparator.comparing(Record::getDateOfBirth));
+    printList(records);
+
+    records.sort(Comparator.comparing(Record::getLastName));
+    printList(records);
   }
 
   private static void readFileByLine(String filePath) throws IOException {

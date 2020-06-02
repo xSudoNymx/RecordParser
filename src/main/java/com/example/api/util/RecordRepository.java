@@ -49,31 +49,4 @@ public class RecordRepository {
   public List<Record> getRecords() {
     return records;
   }
-
-  private List<Record> getRecords(boolean asc, Comparator<Record> comparing) {
-    List<Record> cpy = new ArrayList<>(records);
-    if (asc) {
-      cpy.sort(comparing);
-    } else {
-      cpy.sort(comparing.reversed());
-    }
-    return cpy;
-  }
-
-  public List<Record> getRecordsSortedByGenderAndLastName(boolean asc) {
-    return getRecords(asc, Comparator.comparing(Record::getGender).thenComparing(Record::getLastName));
-  }
-
-  public List<Record> getRecordsSortedByBirthday(boolean asc) {
-    return getRecords(asc, Comparator.comparing(Record::getDateOfBirth));
-  }
-
-  public List<Record> getRecordsSortedByLastName(boolean asc) {
-    return getRecords(asc, Comparator.comparing(Record::getLastName));
-  }
-
-  public void printList() {
-    records.forEach(System.out::println);
-    System.out.println();
-  }
 }
