@@ -13,11 +13,6 @@ public class ParseApplication {
   private static RecordRepository recordRepository = new RecordRepository();
 
   public static void main(String[] args) throws IOException {
-
-    if (args.length <= 0) {
-      return;
-    }
-
     for (String path : args) {
         readFileByLine(path);
     }

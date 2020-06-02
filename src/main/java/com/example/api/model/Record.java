@@ -4,6 +4,7 @@ import com.example.api.exception.DateFormatException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class Record {
 
@@ -15,8 +16,7 @@ public class Record {
   private String favoriteColor;
   private Date dateOfBirth;
 
-  public Record(String lName, String fName, String gender, String favColor, String dateOfBirth)
-      throws IllegalArgumentException {
+  public Record(String lName, String fName, String gender, String favColor, String dateOfBirth) {
     this.lastName = lName;
     this.firstName = fName;
     this.gender = gender;
@@ -61,5 +61,19 @@ public class Record {
     return new SimpleDateFormat(DATEFORMAT).format(dateOfBirth);
   }
 
-
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Record)) {
+      return false;
+    }
+    Record record = (Record) o;
+    return firstName.equals(record.firstName) &&
+        lastName.equals(record.lastName) &&
+        gender.equals(record.gender) &&
+        favoriteColor.equals(record.favoriteColor) &&
+        dateOfBirth.equals(record.dateOfBirth);
+  }
 }

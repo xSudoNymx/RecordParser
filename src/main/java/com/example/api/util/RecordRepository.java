@@ -15,10 +15,14 @@ public class RecordRepository {
   private List<Record> records = new ArrayList<>();
 
   public void addRecord(Record record){
+    if(record == null)
+      return;
     records.add(record);
   }
 
   public void addRecord(String record){
+    if(record == null || record.isBlank())
+      return;
     records.add(parseRecord(record));
   }
 
