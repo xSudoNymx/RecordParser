@@ -15,8 +15,12 @@ public class ParseService {
     recordRepository = new RecordRepository();
   }
 
-  public void addRecord(String record) {
-    recordRepository.addRecord(record);
+  public Record addRecord(String record) {
+    return recordRepository.addRecord(record);
+  }
+
+  public List<Record> getRecords(){
+    return recordRepository.getRecords();
   }
 
   public List<Record> getRecordByGender() {

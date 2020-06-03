@@ -5,6 +5,7 @@ import com.example.api.service.ParseService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,10 +18,13 @@ public class ParseRecordsController {
   @Autowired
   ParseService parseService;
 
-  @ResponseStatus(HttpStatus.OK)
   @RequestMapping(method = RequestMethod.POST,consumes = "text/plain", produces = "application/json")
-  public void addRecord(@RequestBody String record){
-    parseService.addRecord(record);
+  public ResponseEntity<?> addRecord(@RequestBody String record){
+    Record r = parseService.addRecord(record);
+    if(r != null)
+      return new ResponseEntity<>(r,HttpStatus.OK);
+    else
+      return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
   }
 
   @ResponseStatus(HttpStatus.OK)

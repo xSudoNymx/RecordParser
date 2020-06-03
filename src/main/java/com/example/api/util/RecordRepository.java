@@ -2,7 +2,6 @@ package com.example.api.util;
 
 import com.example.api.model.Record;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -14,16 +13,20 @@ public class RecordRepository {
   private static final int RECORD_SIZE = 5;
   private List<Record> records = new ArrayList<>();
 
-  public void addRecord(Record record){
-    if(record == null)
+  public void addRecord(Record record) {
+    if (record == null) {
       return;
+    }
     records.add(record);
   }
 
-  public void addRecord(String record){
-    if(record == null || record.isBlank())
-      return;
-    records.add(parseRecord(record));
+  public Record addRecord(String record) {
+    if (record == null || record.isBlank()) {
+      return null;
+    }
+    Record r = parseRecord(record);
+    records.add(r);
+    return r;
   }
 
   public Record parseRecord(String s) {
