@@ -10,11 +10,11 @@ class RecordTest {
   @Test
   void testToString() {
     Record r2 = new Record("Wong", "Kailum", "Male", "Orange", "11/24/2003");
-    assertEquals("Wong Kailum Male Orange 11/24/2003",r2.toString());
+    assertEquals("Wong Kailum Male Orange 11/24/2003", r2.toString());
   }
 
   @Test
-  void testInvalidDateEmptyRecordCreation(){
+  void testInvalidDateEmptyRecordCreation() {
     DateFormatException thrown = assertThrows(DateFormatException.class,
         () -> new Record("Wong", "Kailum", "Male", "Orange", ""));
 
@@ -22,7 +22,7 @@ class RecordTest {
   }
 
   @Test
-  void testInvalidDateRecordCreation(){
+  void testInvalidDateRecordCreation() {
     DateFormatException thrown = assertThrows(DateFormatException.class,
         () -> new Record("Wong", "Kailum", "Male", "Orange", "11-24-2003"));
 

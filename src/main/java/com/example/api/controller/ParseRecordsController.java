@@ -15,33 +15,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/records")
 public class ParseRecordsController {
+
   @Autowired
   ParseService parseService;
 
-  @RequestMapping(method = RequestMethod.POST,consumes = "text/plain", produces = "application/json")
-  public ResponseEntity<?> addRecord(@RequestBody String record){
+  @RequestMapping(method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
+  public ResponseEntity<?> addRecord(@RequestBody String record) {
     Record r = parseService.addRecord(record);
-    if(r != null)
-      return new ResponseEntity<>(r,HttpStatus.OK);
-    else
-      return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
+    if (r != null) {
+      return new ResponseEntity<>(r, HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+    }
   }
 
   @ResponseStatus(HttpStatus.OK)
   @RequestMapping(value = "/gender", method = RequestMethod.GET, produces = "application/json")
-  public List<Record> getRecordsByGender(){
+  public List<Record> getRecordsByGender() {
     return parseService.getRecordByGender();
   }
 
   @ResponseStatus(HttpStatus.OK)
   @RequestMapping(value = "/birthdate", method = RequestMethod.GET, produces = "application/json")
-  public List<Record> getRecordsByBirthday(){
+  public List<Record> getRecordsByBirthday() {
     return parseService.getRecordByBirthday();
   }
 
   @ResponseStatus(HttpStatus.OK)
   @RequestMapping(value = "/name", method = RequestMethod.GET, produces = "application/json")
-  public List<Record> getRecordsByName(){
+  public List<Record> getRecordsByName() {
     return parseService.getRecordByName();
   }
 

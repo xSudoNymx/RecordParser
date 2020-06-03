@@ -12,11 +12,12 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class ParseApplication {
+
   private static RecordRepository recordRepository = new RecordRepository();
 
   public static void main(String[] args) throws IOException {
     for (String path : args) {
-        readFileByLine(path);
+      readFileByLine(path);
     }
 
     List<Record> records = new ArrayList<>(recordRepository.getRecords());

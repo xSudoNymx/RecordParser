@@ -69,6 +69,7 @@ class RecordRepositoryTest {
 
     assertEquals(recordRepository.getRecords().size(), 1);
   }
+
   @Test
   void testAddBadStringRecord() {
     DateFormatException thrown = assertThrows(DateFormatException.class,

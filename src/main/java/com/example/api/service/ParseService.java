@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ParseService {
+
   private RecordRepository recordRepository;
 
   public ParseService() {
@@ -19,7 +20,7 @@ public class ParseService {
     return recordRepository.addRecord(record);
   }
 
-  public List<Record> getRecords(){
+  public List<Record> getRecords() {
     return recordRepository.getRecords();
   }
 

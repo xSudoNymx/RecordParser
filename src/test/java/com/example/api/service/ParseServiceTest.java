@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ParseServiceTest {
+
   private ParseService parseService;
 
   @BeforeEach
@@ -18,10 +19,10 @@ class ParseServiceTest {
 
   @Test
   void getRecordsSortedByGender() {
-    Record r1 = new Record("Gill","Edwin","Male","Blue","05/29/1986");
-    Record r2 = new Record("Bridges", "Mary","Female","Pink", "02/13/1997");
-    Record r3 = new Record("Whitehead", "Chloe",  "Female", "Navy", "01/27/2002");
-    Record r4 = new Record("Fuller", "Sebastian",   "Male", "Brown", "01/09/1987");
+    Record r1 = new Record("Gill", "Edwin", "Male", "Blue", "05/29/1986");
+    Record r2 = new Record("Bridges", "Mary", "Female", "Pink", "02/13/1997");
+    Record r3 = new Record("Whitehead", "Chloe", "Female", "Navy", "01/27/2002");
+    Record r4 = new Record("Fuller", "Sebastian", "Male", "Brown", "01/09/1987");
 
     parseService.addRecord("Gill,Edwin,Male,Blue,05/29/1986");
     parseService.addRecord("Bridges         | Mary |            Female | Pink |                   02/13/1997");
@@ -38,10 +39,10 @@ class ParseServiceTest {
 
   @Test
   void getRecordsSortedByBirthday() {
-    Record r1 = new Record("Gill","Edwin","Male","Blue","05/29/1986");
-    Record r2 = new Record("Bridges", "Mary","Female","Pink", "02/13/1997");
-    Record r3 = new Record("Whitehead", "Chloe",  "Female", "Navy", "01/27/2002");
-    Record r4 = new Record("Fuller", "Sebastian",   "Male", "Brown", "01/09/1987");
+    Record r1 = new Record("Gill", "Edwin", "Male", "Blue", "05/29/1986");
+    Record r2 = new Record("Bridges", "Mary", "Female", "Pink", "02/13/1997");
+    Record r3 = new Record("Whitehead", "Chloe", "Female", "Navy", "01/27/2002");
+    Record r4 = new Record("Fuller", "Sebastian", "Male", "Brown", "01/09/1987");
 
     parseService.addRecord("Gill,Edwin,Male,Blue,05/29/1986");
     parseService.addRecord("Bridges         | Mary |            Female | Pink |                   02/13/1997");
@@ -58,10 +59,10 @@ class ParseServiceTest {
 
   @Test
   void getRecordsSortedByName() {
-    Record r1 = new Record("Gill","Edwin","Male","Blue","05/29/1986");
-    Record r2 = new Record("Bridges", "Mary","Female","Pink", "02/13/1997");
-    Record r3 = new Record("Whitehead", "Chloe",  "Female", "Navy", "01/27/2002");
-    Record r4 = new Record("Fuller", "Sebastian",   "Male", "Brown", "01/09/1987");
+    Record r1 = new Record("Gill", "Edwin", "Male", "Blue", "05/29/1986");
+    Record r2 = new Record("Bridges", "Mary", "Female", "Pink", "02/13/1997");
+    Record r3 = new Record("Whitehead", "Chloe", "Female", "Navy", "01/27/2002");
+    Record r4 = new Record("Fuller", "Sebastian", "Male", "Brown", "01/09/1987");
 
     parseService.addRecord("Gill,Edwin,Male,Blue,05/29/1986");
     parseService.addRecord("Bridges         | Mary |            Female | Pink |                   02/13/1997");

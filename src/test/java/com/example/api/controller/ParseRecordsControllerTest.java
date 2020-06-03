@@ -70,11 +70,11 @@ class ParseRecordsControllerTest {
 
   @Test
   void getRecordsByGender() throws Exception {
-    Record r1 = new Record("Gill","Edwin","Male","Blue","05/29/1986");
-    Record r2 = new Record("Bridges", "Mary","Female","Pink", "02/13/1997");
-    Record r3 = new Record("Whitehead", "Chloe",  "Female", "Navy", "01/27/2002");
-    Record r4 = new Record("Fuller", "Sebastian",   "Male", "Brown", "01/09/1987");
-    when(parseService.getRecordByGender()).thenReturn(Arrays.asList(r1,r2,r3,r4));
+    Record r1 = new Record("Gill", "Edwin", "Male", "Blue", "05/29/1986");
+    Record r2 = new Record("Bridges", "Mary", "Female", "Pink", "02/13/1997");
+    Record r3 = new Record("Whitehead", "Chloe", "Female", "Navy", "01/27/2002");
+    Record r4 = new Record("Fuller", "Sebastian", "Male", "Brown", "01/09/1987");
+    when(parseService.getRecordByGender()).thenReturn(Arrays.asList(r1, r2, r3, r4));
 
     MvcResult result = this.mockMvc
         .perform(get("/records/gender"))
@@ -91,11 +91,11 @@ class ParseRecordsControllerTest {
 
   @Test
   void getRecordsByBirthday() throws Exception {
-    Record r1 = new Record("Gill","Edwin","Male","Blue","05/29/1986");
-    Record r2 = new Record("Bridges", "Mary","Female","Pink", "02/13/1997");
-    Record r3 = new Record("Whitehead", "Chloe",  "Female", "Navy", "01/27/2002");
-    Record r4 = new Record("Fuller", "Sebastian",   "Male", "Brown", "01/09/1987");
-    when(parseService.getRecordByBirthday()).thenReturn(Arrays.asList(r1,r2,r3,r4));
+    Record r1 = new Record("Gill", "Edwin", "Male", "Blue", "05/29/1986");
+    Record r2 = new Record("Bridges", "Mary", "Female", "Pink", "02/13/1997");
+    Record r3 = new Record("Whitehead", "Chloe", "Female", "Navy", "01/27/2002");
+    Record r4 = new Record("Fuller", "Sebastian", "Male", "Brown", "01/09/1987");
+    when(parseService.getRecordByBirthday()).thenReturn(Arrays.asList(r1, r2, r3, r4));
 
     MvcResult result = this.mockMvc
         .perform(get("/records/birthdate"))
@@ -112,11 +112,11 @@ class ParseRecordsControllerTest {
 
   @Test
   void getRecordsByName() throws Exception {
-    Record r1 = new Record("Gill","Edwin","Male","Blue","05/29/1986");
-    Record r2 = new Record("Bridges", "Mary","Female","Pink", "02/13/1997");
-    Record r3 = new Record("Whitehead", "Chloe",  "Female", "Navy", "01/27/2002");
-    Record r4 = new Record("Fuller", "Sebastian",   "Male", "Brown", "01/09/1987");
-    when(parseService.getRecordByName()).thenReturn(Arrays.asList(r1,r2,r3,r4));
+    Record r1 = new Record("Gill", "Edwin", "Male", "Blue", "05/29/1986");
+    Record r2 = new Record("Bridges", "Mary", "Female", "Pink", "02/13/1997");
+    Record r3 = new Record("Whitehead", "Chloe", "Female", "Navy", "01/27/2002");
+    Record r4 = new Record("Fuller", "Sebastian", "Male", "Brown", "01/09/1987");
+    when(parseService.getRecordByName()).thenReturn(Arrays.asList(r1, r2, r3, r4));
 
     MvcResult result = this.mockMvc
         .perform(get("/records/name"))
